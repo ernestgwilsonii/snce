@@ -1,1 +1,1 @@
-A basic Chrome Extention starting point for ServiceNow Incidents.
+A basic Chrome Extension starting point for ServiceNow Incidents.
