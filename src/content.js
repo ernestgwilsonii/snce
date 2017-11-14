@@ -1,3 +1,8 @@
+const $ = require('jquery');
+global.jQuery = require("jquery");
+require("bootstrap-sass");
+const bootbox = require('bootbox');
+
 console.log("Chrome extension content.js is alive and running!"); // Let us know that the extension is running
 //console.log(window);
 //console.log('window.location.protocol ' + window.location.protocol);
@@ -42,7 +47,7 @@ console.log("Chrome extension content.js is alive and running!"); // Let us know
 // Select the upper right (navbar-right) in ServiceNow
 let serviceNowSelector = document.getElementsByClassName('navbar-right');
 // Turn the upper right (navbar-right) gray in ServiceNow so we indicate the Chrome extenstion has attached
-for (elem of serviceNowSelector) {
+for (let elem of serviceNowSelector) {
     elem.style['background-color'] = '#A9A9A9';
 }
 
@@ -74,7 +79,7 @@ function getTicketInfo(sys_id, callback) {
 
 function turnGray() {
     setTimeout(function () {
-        for (elem of serviceNowSelector) {
+        for (let elem of serviceNowSelector) {
             elem.style['background-color'] = '#A9A9A9';
             console.log("Automation: COMPLETED");
         }
@@ -83,7 +88,7 @@ function turnGray() {
 
 function engageRundeck(rundeckJobGuid, incidentNumber, incidentId, callback) {
     // Turn Yellow
-    for (elem of serviceNowSelector) {
+    for (let elem of serviceNowSelector) {
         elem.style['background-color'] = '#CCCC00';
     }
     // Send this job to Rundeck
@@ -96,7 +101,7 @@ function engageRundeck(rundeckJobGuid, incidentNumber, incidentId, callback) {
     let results = "Woohoo! Blah blah blah..."
     // Simulate waiting for Rundeck
     setTimeout(function () {
-        for (elem of serviceNowSelector) {
+        for (let elem of serviceNowSelector) {
             elem.style['background-color'] = '#00FF00';
             console.log("Automation: Rundeck Completed.");
             callback(null, results);
@@ -113,7 +118,7 @@ function takeAction(message, sender, sendResponse) {
         console.log("tab.url " + message.url);
         console.log(serviceNowSelector);
         // Set Yellow
-        for (elem of serviceNowSelector) {
+        for (let elem of serviceNowSelector) {
             elem.style['background-color'] = 'FFFF00';
         }
 
@@ -123,7 +128,7 @@ function takeAction(message, sender, sendResponse) {
                 console.log(error);
                 window.alert("Bummer... " + error);
                 // Set Gray
-                for (elem of serviceNowSelector) {
+                for (let elem of serviceNowSelector) {
                     elem.style['background-color'] = '#A9A9A9';
                     console.log("Automation: RESET");
                 }
@@ -134,7 +139,7 @@ function takeAction(message, sender, sendResponse) {
                 let incidentId = response.result[0].sys_id;
                 if (window.confirm("Run automation on \nIncident # " + incidentNumber) == true) {
                     console.log("Automation: ACTIVATED");
-                    for (elem of serviceNowSelector) {
+                    for (let elem of serviceNowSelector) {
                         elem.style['background-color'] = '#FF0000';
                     }
 
@@ -150,7 +155,7 @@ function takeAction(message, sender, sendResponse) {
                             console.log(error);
                         } else {
                             //console.log(results);
-                            for (elem of serviceNowSelector) {
+                            for (let elem of serviceNowSelector) {
                                 elem.style['background-color'] = '#00FF00';
                                 console.log("Automation: RESULTS Update Ticket " + incidentNumber + " - " + results);
                                 turnGray();
@@ -161,7 +166,7 @@ function takeAction(message, sender, sendResponse) {
                     // Automation cancelled
                     console.log("Automation: CANCELLED");
                     // Turn Blue
-                    for (elem of serviceNowSelector) {
+                    for (let elem of serviceNowSelector) {
                         elem.style['background-color'] = '#87CEFA';
                     }
                     turnGray();
@@ -174,11 +179,39 @@ function takeAction(message, sender, sendResponse) {
         console.log("tab.url " + message.url);
         console.log(serviceNowSelector);
         // Set Blue
-        for (elem of serviceNowSelector) {
+        for (let elem of serviceNowSelector) {
             elem.style['background-color'] = '0000FF';
         }
-        window.alert("Sorry, only Incident tickets are supported at this time!");
-        turnGray();
+        //window.alert("Sorry, only Incident tickets are supported at this time!");
+        //turnGray();
+
+        bootbox.prompt({
+            title: "Please select an automation!",
+            inputType: 'select',
+            inputOptions: [
+                {
+                    text: 'Choose one...',
+                    value: '',
+                },
+                {
+                    text: 'MTR',
+                    value: '1',
+                },
+                {
+                    text: 'PING',
+                    value: '2',
+                },
+                {
+                    text: 'Traceroute',
+                    value: '3',
+                }
+            ],
+            callback: function (result) {
+                console.log(result);
+                turnGray();
+            }
+        });
+
     }
 
 }

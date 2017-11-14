@@ -1,0 +1,35 @@
+{
+  "name": "snce",
+  "version": "0.0.2",
+  "description": "A basic Chrome Extention starting point for ServiceNow Incidents.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node_modules/.bin/webpack src/content.js --output-filename dist/content.js && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernestgwilsonii/snce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ernestgwilsonii/snce/issues"
+  },
+  "homepage": "https://github.com/ernestgwilsonii/snce#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "bootbox": "^4.4.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-node": "^1.0.0",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}

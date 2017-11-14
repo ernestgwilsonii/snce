@@ -1,0 +1,26 @@
+# The Coding Train by Daniel Shiffman
+# Live Stream #106.1: Chrome Extensions - Part 1
+# REF: https://www.youtube.com/watch?v=Z9pzHD2g0Ao
+# Live Stream #106.2: Chrome Extensions - Part 2
+# REF: https://www.youtube.com/watch?v=y0zS83xj0g0
+
+# Bootbox - To pop-up a modal dialog box
+# WARNING: This added complexity since it required adding NPM modules to the browser application!
+# http://bootboxjs.com/examples.html#bb-custom-dialog
+# COMPLEX PART - Adding jQuery, Bootstrap and Bootbox using Webpack!
+# Setting up Chrome Extensions for use with ES6
+# REF: https://www.coreycleary.me/setting-up-chrome-extensions-for-use-with-es6/
+#npm init -y
+#npm install --save-dev babel-preset-es2015 babel-loader babel-register
+# Edit .babelrc and ensure it has { "presets": ["es2015"] }
+#npm install --save-dev webpack webpack-dev-server
+# Edit webpack.config.js per https://www.coreycleary.me/setting-up-chrome-extensions-for-use-with-es6/
+#npm install bootbox --save
+#npm install jquery --save
+#npm install bootstrap --save
+#npm install bootstrap-node --save
+#npm install bootstrap-sass --save
+
+# Transpile:
+node_modules/.bin/webpack src/content.js --output-filename dist/content.js
+
