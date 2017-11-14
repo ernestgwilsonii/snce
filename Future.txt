@@ -1,0 +1,19 @@
+# Interacting with the DOM with jQuery (using JavaScript only):
+# REF: https://blog.garstasio.com/you-dont-need-jquery/selectors/
+# REF: https://blog.garstasio.com/you-dont-need-jquery/dom-manipulation/
+
+# Fetch API related:
+# REF: https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials
+# REF: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+# REF: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+# ServiceNow REST API Incident ticket interaction:
+# REF: https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/integrate/inbound_rest/task/t_GetStartedCreateInt.html
+
+# Chrome Extensions - permisions and future
+# REF: https://developer.chrome.com/apps/declare_permissions
+# REF: https://developer.chrome.com/extensions/browserAction
+
+# Other Chrome Extension tools
+# REF: https://www.npmjs.com/package/chrome-extension-scripts
+# REF: https://www.npmjs.com/package/generator-chrome-extension
