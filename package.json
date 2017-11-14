@@ -1,6 +1,6 @@
 {
   "name": "snce",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A basic Chrome Extention starting point for ServiceNow Incidents.",
   "main": "app.js",
   "scripts": {

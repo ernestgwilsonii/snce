@@ -9923,35 +9923,6 @@ console.log("Chrome extension content.js is alive and running!"); // Let us know
 // console.log('window.document.url ' + window.document.url);
 
 
-// // Load jQuery
-// var head = document.getElementsByTagName('head')[0];
-// var script = document.createElement('script');
-// script.type = 'text/javascript';
-// script.src = "https://code.jquery.com/jquery-3.2.1.min.js";
-// // Then bind the event to the callback function.
-// // There are several events for cross browser compatibility.
-// script.onreadystatechange = handler;
-// script.onload = handler;
-// // Fire the loading
-// head.appendChild(script);
-// function handler() {
-//     console.log('jquery added and loaded!');
-// }
-
-
-// // Determine if the document has fully loaded and is ready
-// if (document.readyState === 'complete') {
-//     console.log('Document Ready!');
-// }
-
-
-// // Turn all paragraphs green to verify extension is doing something
-// let paragraph = document.getElementsByTagName('p');
-// for (elt of paragraph) {
-//     elt.style['background-color'] = '#00FF00';
-// }
-
-
 // Select the upper right (navbar-right) in ServiceNow
 var serviceNowSelector = document.getElementsByClassName('navbar-right');
 // Turn the upper right (navbar-right) gray in ServiceNow so we indicate the Chrome extenstion has attached
@@ -9963,7 +9934,7 @@ try {
     for (var _iterator = serviceNowSelector[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var elem = _step.value;
 
-        elem.style['background-color'] = '#A9A9A9';
+        elem.style['background-color'] = '#A9A9A9'; // Set Gray
     }
 } catch (err) {
     _didIteratorError = true;
@@ -10003,110 +9974,89 @@ function getTicketInfo(sys_id, callback) {
     });
 }
 
-function turnGray() {
-    setTimeout(function () {
-        var _iteratorNormalCompletion2 = true;
-        var _didIteratorError2 = false;
-        var _iteratorError2 = undefined;
-
-        try {
-            for (var _iterator2 = serviceNowSelector[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                var elem = _step2.value;
-
-                elem.style['background-color'] = '#A9A9A9';
-                console.log("Automation: COMPLETED");
-            }
-        } catch (err) {
-            _didIteratorError2 = true;
-            _iteratorError2 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                    _iterator2.return();
-                }
-            } finally {
-                if (_didIteratorError2) {
-                    throw _iteratorError2;
-                }
-            }
-        }
-    }, 3000);
-}
-
-function engageRundeck(rundeckJobGuid, incidentNumber, incidentId, callback) {
-    // Turn Yellow
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+function turnBlue() {
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
     try {
-        for (var _iterator3 = serviceNowSelector[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-            var elem = _step3.value;
+        for (var _iterator2 = serviceNowSelector[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var elem = _step2.value;
 
-            elem.style['background-color'] = '#CCCC00';
+            elem.style['background-color'] = '#0000FF'; // Set Blue
+            //console.log("SET BLUE");
         }
-        // Send this job to Rundeck
     } catch (err) {
-        _didIteratorError3 = true;
-        _iteratorError3 = err;
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
     } finally {
         try {
-            if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                _iterator3.return();
+            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                _iterator2.return();
             }
         } finally {
-            if (_didIteratorError3) {
-                throw _iteratorError3;
+            if (_didIteratorError2) {
+                throw _iteratorError2;
             }
         }
     }
 
-    console.log("Automation: Rundeck Started");
-    console.log("Automation: Rundeck JobGuid: " + rundeckJobGuid);
-    // Get the actual jobId from Rundeck at some point
-    var rundeckJobId = "101";
-    console.log("Automation: Rundeck JobId: " + rundeckJobId);
-    // Get some actual results from Rundeck at some point!
-    var results = "Woohoo! Blah blah blah...";
-    // Simulate waiting for Rundeck
     setTimeout(function () {
-        var _iteratorNormalCompletion4 = true;
-        var _didIteratorError4 = false;
-        var _iteratorError4 = undefined;
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
 
         try {
-            for (var _iterator4 = serviceNowSelector[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-                var elem = _step4.value;
+            for (var _iterator3 = serviceNowSelector[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                var elem = _step3.value;
 
-                elem.style['background-color'] = '#00FF00';
-                console.log("Automation: Rundeck Completed.");
-                callback(null, results);
+                elem.style['background-color'] = '#A9A9A9'; // Set Gray
+                console.log("Automation: COMPLETED");
             }
         } catch (err) {
-            _didIteratorError4 = true;
-            _iteratorError4 = err;
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
         } finally {
             try {
-                if (!_iteratorNormalCompletion4 && _iterator4.return) {
-                    _iterator4.return();
+                if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                    _iterator3.return();
                 }
             } finally {
-                if (_didIteratorError4) {
-                    throw _iteratorError4;
+                if (_didIteratorError3) {
+                    throw _iteratorError3;
                 }
             }
         }
     }, 3000);
 }
 
-chrome.runtime.onMessage.addListener(takeAction);
+function turnGreen() {
+    var _iteratorNormalCompletion4 = true;
+    var _didIteratorError4 = false;
+    var _iteratorError4 = undefined;
 
-function takeAction(message, sender, sendResponse) {
-    //console.log(message.command);
-    if (message.command === "procIncident") {
-        console.log("tab.url " + message.url);
-        console.log(serviceNowSelector);
-        // Set Yellow
+    try {
+        for (var _iterator4 = serviceNowSelector[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var elem = _step4.value;
+
+            elem.style['background-color'] = '#00FF00'; // Set Green
+        }
+    } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                _iterator4.return();
+            }
+        } finally {
+            if (_didIteratorError4) {
+                throw _iteratorError4;
+            }
+        }
+    }
+
+    setTimeout(function () {
         var _iteratorNormalCompletion5 = true;
         var _didIteratorError5 = false;
         var _iteratorError5 = undefined;
@@ -10115,7 +10065,8 @@ function takeAction(message, sender, sendResponse) {
             for (var _iterator5 = serviceNowSelector[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
                 var elem = _step5.value;
 
-                elem.style['background-color'] = 'FFFF00';
+                elem.style['background-color'] = '#A9A9A9'; // Set Gray
+                console.log("Automation: COMPLETED");
             }
         } catch (err) {
             _didIteratorError5 = true;
@@ -10131,141 +10082,133 @@ function takeAction(message, sender, sendResponse) {
                 }
             }
         }
+    }, 3000);
+}
 
-        var sys_id = message.sncSysId; //let sys_id = 'zce2de9fdb56cbc00b8bf3d51d961976';
+function engageRundeck(rundeckJobGuid, incidentNumber, incidentId, callback) {
+    var _iteratorNormalCompletion6 = true;
+    var _didIteratorError6 = false;
+    var _iteratorError6 = undefined;
+
+    try {
+        for (var _iterator6 = serviceNowSelector[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+            var elem = _step6.value;
+
+            elem.style['background-color'] = '#CCCC00'; // Set Yellow
+        }
+        // Send this job to Rundeck - Just place holder code right now!
+    } catch (err) {
+        _didIteratorError6 = true;
+        _iteratorError6 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion6 && _iterator6.return) {
+                _iterator6.return();
+            }
+        } finally {
+            if (_didIteratorError6) {
+                throw _iteratorError6;
+            }
+        }
+    }
+
+    console.log("Automation: Rundeck Started");
+    console.log("Automation: Rundeck JobGuid: " + rundeckJobGuid);
+    // Get the actual jobId from Rundeck at some point
+    var rundeckJobId = "101";
+    console.log("Automation: Rundeck JobId: " + rundeckJobId);
+    // Get some actual results from Rundeck at some point!
+    var results = "Woohoo! Blah blah blah...";
+    // Simulate waiting for Rundeck
+    setTimeout(function () {
+        var _iteratorNormalCompletion7 = true;
+        var _didIteratorError7 = false;
+        var _iteratorError7 = undefined;
+
+        try {
+            for (var _iterator7 = serviceNowSelector[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                var elem = _step7.value;
+
+                elem.style['background-color'] = '#00FF00'; // Set Green
+                console.log("Automation: Rundeck Completed.");
+                callback(null, results);
+            }
+        } catch (err) {
+            _didIteratorError7 = true;
+            _iteratorError7 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion7 && _iterator7.return) {
+                    _iterator7.return();
+                }
+            } finally {
+                if (_didIteratorError7) {
+                    throw _iteratorError7;
+                }
+            }
+        }
+    }, 3000);
+}
+
+chrome.runtime.onMessage.addListener(takeAction);
+
+function takeAction(message, sender, sendResponse) {
+    //console.log(message.command);
+    if (message.command === "procIncident") {
+        console.log("tab.url " + message.url);
+        console.log(serviceNowSelector);
+
+        var sys_id = message.sncSysId; // Example let sys_id = 'zce2de9fdb56cbc00b8bf3d51d961976';
         getTicketInfo(sys_id, function (error, response) {
             if (error) {
                 console.log(error);
                 window.alert("Bummer... " + error);
-                // Set Gray
-                var _iteratorNormalCompletion6 = true;
-                var _didIteratorError6 = false;
-                var _iteratorError6 = undefined;
-
-                try {
-                    for (var _iterator6 = serviceNowSelector[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-                        var elem = _step6.value;
-
-                        elem.style['background-color'] = '#A9A9A9';
-                        console.log("Automation: RESET");
-                    }
-                } catch (err) {
-                    _didIteratorError6 = true;
-                    _iteratorError6 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion6 && _iterator6.return) {
-                            _iterator6.return();
-                        }
-                    } finally {
-                        if (_didIteratorError6) {
-                            throw _iteratorError6;
-                        }
-                    }
-                }
+                turnBlue();
             } else {
                 console.log(response.result[0]); // Complete Incident ticket details <--Turn this OFF for PROD!
 
                 var incidentNumber = response.result[0].number;
                 var incidentId = response.result[0].sys_id;
-                if (window.confirm("Run automation on \nIncident # " + incidentNumber) == true) {
-                    console.log("Automation: ACTIVATED");
-                    var _iteratorNormalCompletion7 = true;
-                    var _didIteratorError7 = false;
-                    var _iteratorError7 = undefined;
+                //////
 
-                    try {
-                        for (var _iterator7 = serviceNowSelector[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                            var _elem2 = _step7.value;
-
-                            _elem2.style['background-color'] = '#FF0000';
-                        }
-
-                        // function openPopupWindow() {
-                        //     window.open("http://google.com", "popup", "width=668,height=548,scrollbars=yes, resizable=yes");
-                        //     console.log("Automation: POPUP WINDOW");
-                        // }
-                        // openPopupWindow();
-                    } catch (err) {
-                        _didIteratorError7 = true;
-                        _iteratorError7 = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion7 && _iterator7.return) {
-                                _iterator7.return();
-                            }
-                        } finally {
-                            if (_didIteratorError7) {
-                                throw _iteratorError7;
-                            }
-                        }
-                    }
-
-                    var rundeckJobGuid = "mtrmtrmtr"; // <--Whatever job GUID in Rundeck actually is!
-                    engageRundeck(rundeckJobGuid, incidentNumber, incidentId, function (error, results) {
-                        if (error) {
-                            console.log(error);
-                        } else {
-                            //console.log(results);
-                            var _iteratorNormalCompletion8 = true;
-                            var _didIteratorError8 = false;
-                            var _iteratorError8 = undefined;
-
-                            try {
-                                for (var _iterator8 = serviceNowSelector[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-                                    var _elem = _step8.value;
-
-                                    _elem.style['background-color'] = '#00FF00';
+                bootbox.prompt({
+                    title: "Please select an automation to run on: Incident # " + incidentNumber,
+                    inputType: 'select',
+                    inputOptions: [{
+                        text: 'Choose one...',
+                        value: ''
+                    }, {
+                        text: 'MTR',
+                        value: '1'
+                    }, {
+                        text: 'PING',
+                        value: '2'
+                    }, {
+                        text: 'Traceroute',
+                        value: '3'
+                    }],
+                    callback: function callback(result) {
+                        if (result) {
+                            // Automation selected
+                            console.log(result);
+                            var rundeckJobGuid = result; // <--Whatever job GUID in Rundeck actually is!
+                            engageRundeck(rundeckJobGuid, incidentNumber, incidentId, function (error, results) {
+                                if (error) {
+                                    console.log(error);
+                                } else {
+                                    //console.log(results);
                                     console.log("Automation: RESULTS Update Ticket " + incidentNumber + " - " + results);
-                                    turnGray();
+                                    turnGreen();
                                 }
-                            } catch (err) {
-                                _didIteratorError8 = true;
-                                _iteratorError8 = err;
-                            } finally {
-                                try {
-                                    if (!_iteratorNormalCompletion8 && _iterator8.return) {
-                                        _iterator8.return();
-                                    }
-                                } finally {
-                                    if (_didIteratorError8) {
-                                        throw _iteratorError8;
-                                    }
-                                }
-                            }
-                        }
-                    });
-                } else {
-                    // Automation cancelled
-                    console.log("Automation: CANCELLED");
-                    // Turn Blue
-                    var _iteratorNormalCompletion9 = true;
-                    var _didIteratorError9 = false;
-                    var _iteratorError9 = undefined;
-
-                    try {
-                        for (var _iterator9 = serviceNowSelector[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
-                            var _elem3 = _step9.value;
-
-                            _elem3.style['background-color'] = '#87CEFA';
-                        }
-                    } catch (err) {
-                        _didIteratorError9 = true;
-                        _iteratorError9 = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion9 && _iterator9.return) {
-                                _iterator9.return();
-                            }
-                        } finally {
-                            if (_didIteratorError9) {
-                                throw _iteratorError9;
-                            }
+                            });
+                        } else {
+                            // Automation cancelled
+                            turnBlue();
                         }
                     }
+                });
 
-                    turnGray();
-                }
+                //////
             }
         });
     }
@@ -10273,55 +10216,8 @@ function takeAction(message, sender, sendResponse) {
     if (message.command === "procNotSupported") {
         console.log("tab.url " + message.url);
         console.log(serviceNowSelector);
-        // Set Blue
-        var _iteratorNormalCompletion10 = true;
-        var _didIteratorError10 = false;
-        var _iteratorError10 = undefined;
-
-        try {
-            for (var _iterator10 = serviceNowSelector[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-                var _elem4 = _step10.value;
-
-                _elem4.style['background-color'] = '0000FF';
-            }
-            //window.alert("Sorry, only Incident tickets are supported at this time!");
-            //turnGray();
-        } catch (err) {
-            _didIteratorError10 = true;
-            _iteratorError10 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion10 && _iterator10.return) {
-                    _iterator10.return();
-                }
-            } finally {
-                if (_didIteratorError10) {
-                    throw _iteratorError10;
-                }
-            }
-        }
-
-        bootbox.prompt({
-            title: "Please select an automation!",
-            inputType: 'select',
-            inputOptions: [{
-                text: 'Choose one...',
-                value: ''
-            }, {
-                text: 'MTR',
-                value: '1'
-            }, {
-                text: 'PING',
-                value: '2'
-            }, {
-                text: 'Traceroute',
-                value: '3'
-            }],
-            callback: function callback(result) {
-                console.log(result);
-                turnGray();
-            }
-        });
+        window.alert("Sorry, only Incident tickets are supported at this time!");
+        turnBlue();
     }
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
